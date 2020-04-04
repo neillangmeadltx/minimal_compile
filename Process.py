@@ -87,6 +87,21 @@ def process_include_stmt(line):
     
     if (d3_b):
         print ("matching three levels",line)
+        dir1 = "inc\\" + d3_b.group(1)  
+        dir2 = dir1 + "\\" + d3_b.group(2)
+        dir3 = dir2 + "\\" + d3_b.group(3)
+        all_dirs = dir1 + dir2 + dir3
+        filem = d3_b.group(4)
+        print (filem)
+        cmd1 = "mkdir " + dir1
+        cmd2 = "mkdir " + dir2
+        cmd3 = "mkdir " + dir3
+        os.system(cmd1)
+        os.system(cmd2)
+        os.system(cmd3)
+        cmd4 = "touch " + dir3 + "\\" + filem
+        print (cmd4)
+        os.system(cmd4)
         return 
 
     if (d4_b):
