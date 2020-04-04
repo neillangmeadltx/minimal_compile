@@ -70,6 +70,19 @@ def process_include_stmt(line):
 
     if (d2_b):
         print ("Matching two levels", line)
+        print (d2_b.group(1))
+        print (d2_b.group(2))
+        #dir_mk = 
+        print (d2_b.group(3))
+        cmd1 = "mkdir " + "inc\\" + d2_b.group(1);
+        cmd2 = "mkdir " + "inc\\" + d2_b.group(1) + "\\" + d2_b.group(2)
+        cmd3 = "touch " + "inc\\" + d2_b.group(1) + "\\" + d2_b.group(2) + "\\" + d2_b.group(3)
+
+        print (cmd1, cmd2, cmd3)
+        os.system(cmd1)
+        os.system(cmd2)
+        os.system(cmd3)
+        #os.system()
         return
     
     if (d3_b):
